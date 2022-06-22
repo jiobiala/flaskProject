@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Home
+{% endblock %}
+
+{% block nav_items %}
+
+{% endblock %}
+
+
+
+
+{% block head %}
+
+<h2 class="fs-3 m-0 fw-bold text-dark text-uppercase border-bottom">Loans</h2>
+
+{% endblock %}
+
+
+
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col md-12">
+                <div class="jumbotron p-3 ">
+
+                <div class="float-end"><input id="searchfield" class="form-control me-2" onkeyup="search()" type="text" placeholder="Search" aria-label="Search"></div><br>
+                <br>
+
+                    <table id="myTable" class="table table-hover ">
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Loan Plan</th>
+                            <th>Ammount Payable</th>
+                            <th>ACTION</th>
+                        </tr>
+
+                        {% for loan in loans %}
+
+                        <tr>
+                            <td>{{ loan.id }}</td>
+                            <td>{{ loan.fullname }}</td>
+                            <td>{{ loan.loan_plan }}</td>
+                            <td>{{ loan.ap }}</td>
+
+
+
+                            <td>
+                                <a href="/update/{{ loan.id }}" class="btn btn-warning btn-xs" data-bs-toggle ="modal" data-bs-target="#modaledit{{ loan.id }}">Approve</a>
+                                <a href="/delete/{{ loan.id }}" class="btn btn-danger btn-xs" onclick="return confirm('Delete Profile?')" >Reject</a>
+
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+                    </table>
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock %}

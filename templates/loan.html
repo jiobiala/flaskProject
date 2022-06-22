@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block title %}Home
+{% endblock %}
+
+{% block nav_items %}
+
+{% endblock %}
+
+
+
+
+{% block head %}
+
+<h2 class="fs-3 m-0 fw-bold text-dark text-uppercase border-bottom">Loan Form</h2>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block content %}
+    <div class="text-center">
+        <label><h2>APPLICATION FORM</h2></label>
+    </div>
+
+   <form class="" method="post">
+        <hr>
+            <label><h5>Personal Information</h5></label>
+       <hr>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                        <label>Fullname</label>
+                        <input name="fullname" type="text" class="form-control" placeholder="Fullname">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                        <label>Birthdate</label>
+                        <input name="birthdate" type="date" class="form-control" placeholder="Birthdate">
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col">
+                <div class="form-group">
+                        <label>Phone Number</label>
+                        <input name="p_number" type="number" class="form-control" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                        <label>Email</label>
+                        <input name="email" type="email" class="form-control" placeholder="Email address">
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col">
+                <div class="form-group">
+                        <label>Present Address</label>
+                        <input name="address" type="text" class="form-control" placeholder="Address">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                        <label>Employer name</label>
+                        <input name="e_name" type="text" class="form-control" placeholder="Employer name">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+            <label><h5>Loan Information</h5></label>
+       <hr>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                        <label>Loan Plan</label>
+                        <select name="loan_plan" id="loan_plan" class="form-select">
+                            <option disable selected hidden >Select plan</option>
+                            <option>6 month/s [4%-3%]</option>
+                            <option>12 month/s [5%-3%]</option>
+                            <option>36 month/s [6%-3%]</option>
+                            <option>64 month/s [7%-2%]</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                        <label>Loan Amount</label>
+                        <input name="amount" type="number" class="form-control" placeholder="Loan Amount">
+                </div>
+            </div>
+        </div>
+   <div class="row">
+        <div class="col">
+                <div class="form-group">
+                        <label>Purpose</label>
+                          <textarea name="purpose" class="form-control" rows="3"  placeholder="Purpose..."></textarea>
+                </div>
+        </div>
+       <div class="col align-self-center ms-5">
+                <button type="submit" class="btn btn-md btn-primary text-uppercase ">calculate</button>
+        </div>
+   </div>
+
+   <div class="row mt-5">
+       <div class="col text-center">
+                <div class="form-group ">
+                        <label class="fw-bold ">Total Payable Amount</label>
+                             <br>
+                        <label name="ap" class="fw-bold ">{{ ap }}</label>
+                </div>
+        </div>
+         <div class="col text-center">
+                <div class="form-group ">
+                        <label class="fw-bold ">Monthly Payable Amount</label>
+                             <br>
+                        <label name="mp" class="fw-bold">{{ mp }}</label>
+                </div>
+        </div>
+         <div class="col text-center">
+                <div class="form-group ">
+                        <label class="fw-bold ">Penalty Amount (monthly) </label>
+                             <br>
+                        <label name="p" class="fw-bold ">{{ p }}</label>
+                </div>
+        </div>
+   </div>
+   </form>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Home
+{% endblock %}
+
+{% block nav_items %}
+<a class=" list-group-item list-group-item-action bg-transparent text-light fs-5 fw-bold"> <i class="fas fa-edit text-light fs-4 me-3" id="menu-toggle"></i>FORM </a>
+{% endblock %}
+
+
+
+
+{% block head %}
+
+<h2 class="fs-3 m-0 fw-bold text-dark text-uppercase border-bottom">Loan Form</h2>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block content %}
+    <div class="text-center">
+        <label><h2>APPLICATION FORM</h2></label>
+    </div>
+
+   <form class="" method="post">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                        <label>Loan Plan</label>
+                        <select name="loan_plan" id="loan_plan" class="form-select">
+                            <option disable selected hidden >Select plan</option>
+                            <option>6 month/s [8%-3%]</option>
+                            <option>12 month/s [6%-3%]</option>
+                            <option>36 month/s [5%-3%]</option>
+                            <option>64 month/s [4%-2%]</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                        <label>Loan Amount</label>
+                        <input name="amount" type="number" class="form-control" placeholder="Loan Amount">
+                </div>
+            </div>
+        </div>
+   <div class="row">
+        <div class="col">
+                <div class="form-group">
+                        <label>Purpose</label>
+                          <textarea name="p" class="form-control" rows="3"  placeholder="Purpose..."></textarea>
+                </div>
+        </div>
+       <div class="col align-self-center ms-5">
+                <button type="submit" class="btn btn-md btn-primary text-uppercase ">calculate</button>
+        </div>
+   </div>
+
+   <div class="row mt-5">
+       <div class="col text-center">
+                <div class="form-group ">
+                        <label class="fw-bold ">Total Payable Amount</label>
+                             <br>
+                        <label class="fw-bold ">{{ ap }}</label>
+                </div>
+        </div>
+         <div class="col text-center">
+                <div class="form-group ">
+                        <label class="fw-bold ">Monthly Payable Amount</label>
+                             <br>
+                        <label class="fw-bold ">{{ mp }}</label>
+                </div>
+        </div>
+         <div class="col text-center">
+                <div class="form-group ">
+                        <label class="fw-bold ">Penalty Amount (monthly) </label>
+                             <br>
+                        <label class="fw-bold ">{{ p }}</label>
+                </div>
+        </div>
+   </div>
+   </form>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+<form method="POST">
+    <section class="vh-100" style="background-color: lightblue;">
+      <div id="login_form" class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+
+                <h3 class="mb-5">Sign in</h3>
+                  <label onload="">{{ msg }}</label>
+
+                <div class="form-outline mb-4">
+                  <input name="username" type="text" id="typeEmailX-2" class="form-control form-control-lg" />
+                  <label class="form-label" for="typeEmailX-2">Username</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input name="password" type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+                  <label class="form-label" for="typePasswordX-2">Password</label>
+                </div>
+
+
+
+                <select name="user_type" class="form-select" aria-label="Default select example">
+                  <option value="1">Admin</option>
+                  <option value="2">Employee</option>
+                  <option value="3">Client</option>
+                </select>
+
+                  <hr class="my-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit"> Login </button>
+
+                <hr class="my-4">
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</form>
